@@ -1,0 +1,91 @@
+{
+  "auto_update": false,
+  "vim_mode": false,
+  "icon_theme": "Catppuccin Latte",
+  "theme": "Catppuccin Mocha",
+  "ui_font_size": 20,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 20,
+  "languages": {
+    "Nix": {
+      "formatter": {
+        "external": {
+          "command": "nixfmt"
+        }
+      }
+    }
+  },
+  "lsp": {
+    "Nix": {
+      "language_servers": [
+        "nixd",
+        "!nil"
+      ]
+    },
+    "$LANGUAGE_SERVER_NAME": {
+      "initialization_options": {
+        "preferences": {
+          "includeInlayParameterNameHints": "all",
+          "includeInlayParameterNameHintsWhenArgumentMatchesName": true,
+          "includeInlayFunctionParameterTypeHints": true,
+          "includeInlayVariableTypeHints": true,
+          "includeInlayVariableTypeHintsWhenTypeMatchesName": true,
+          "includeInlayPropertyDeclarationTypeHints": true,
+          "includeInlayFunctionLikeReturnTypeHints": true,
+          "includeInlayEnumMemberValueHints": true
+        }
+      }
+    }
+  },
+  "format_on_save": "language_server",
+  "autosave": "on_focus_change",
+  "edit_predictions": {
+    "disabled_globs": [
+      ".env"
+    ]
+  },
+  "current_line_highlight": "line",
+  "scrollbar": {
+    "show": "auto",
+    "cursors": true,
+    "git_diff": true,
+    "search_results": true,
+    "selected_symbol": true,
+    "diagnostics": "all"
+  },
+  "enable_language_server": true,
+  "formatter": "auto",
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "fixed",
+    "background_coloring": "indent_aware"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true
+    }
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+  "journal": {
+    "path": "~",
+    "hour_format": "hour12"
+  },
+  "show_whitespaces": "all",
+  "terminal": {
+    "blinking": "terminal_controlled",
+    "copy_on_select": true,
+    "button": true,
+    "toolbar": {
+      "title": true
+    },
+    "working_directory": "current_project_directory"
+  }
+}
