@@ -263,6 +263,13 @@ environment {
     XDG_CURRENT_DESKTOP "niri"
     DISPLAY ":0"
 }
+
+cursor{
+    xcursor-theme "Bibata-Modern-Ice"
+    // xcursor-size 48
+    hide-when-typing
+    hide-after-inactive-ms 1000
+}
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
