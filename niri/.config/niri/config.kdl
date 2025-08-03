@@ -258,8 +258,9 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "xwayland-satellite"
 
-environment{ 
-
+environment { 
+    XDG_SESSION_TYPE "wayland"
+    XDG_CURRENT_DESKTOP "niri"
     DISPLAY ":0"
 }
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
