@@ -266,6 +266,7 @@ environment {
     XDG_SESSION_TYPE "wayland"
     XDG_CURRENT_DESKTOP "niri"
     DISPLAY ":0"
+    NIXOS_OZONE_WL "1"
 }
 
 cursor{
