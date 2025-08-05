@@ -247,6 +247,9 @@ layer-rule {
     match namespace="^swww-daemon$"
     place-within-backdrop true
 }
+workspace "web"
+workspace "academic"
+workspace "chill"
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
@@ -277,9 +280,23 @@ animations {
 window-rule {
     match app-id="brave-browser"
     open-maximized true
-    default-column-width {
-
-    }
+    open-on-workspace "web"
+}
+window-rule {
+    match app-id="discord"
+    open-maximized false
+    open-on-workspace "chill"
+}
+window-rule {
+    match app-id="spotify"
+    open-maximized true
+    open-on-workspace "chill"
+}
+window-rule {
+    // Open the Firefox picture-in-picture player as floating by default.window-rule {
+    match app-id="obsidian"
+    open-maximized true
+    open-on-workspace "academic"
 }
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
