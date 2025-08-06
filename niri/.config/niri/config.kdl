@@ -377,6 +377,9 @@ binds {
     Super+Shift+D hotkey-overlay-title="Open Discord" {
         spawn "discord"
     }
+    Super+Shift+Z hotkey-overlay-title="Toggle Waybar" {
+        spawn "bash" "/home/kalyanm/dotfiles/niri/.config/niri/scripts/toggle_waybar.sh"
+    }
     Super+Space hotkey-overlay-title="Run an Application: walker" {
         spawn "walker"
     }
