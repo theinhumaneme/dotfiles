@@ -229,6 +229,7 @@ spawn-at-startup "nm-applet"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "bash" "/home/kalyanm/dotfiles/niri/.config/niri/scripts/wallpaper.sh"
 spawn-at-startup "walker" "--gapplication-service"
+spawn-at-startup "hypridle"
 environment {
     XDG_SESSION_TYPE "wayland"
     XDG_CURRENT_DESKTOP "niri"
