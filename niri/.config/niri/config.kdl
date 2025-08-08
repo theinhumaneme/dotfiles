@@ -240,17 +240,13 @@ cursor {
     xcursor-theme "Bibata-Modern-Ice"
     // xcursor-size 48
     hide-when-typing
-    hide-after-inactive-ms 500
+    hide-after-inactive-ms 1000
 }
 layer-rule {
-    // This is for swaybg; change for other wallpaper tools.
     // Find the right namespace by running niri msg layers.
     match namespace="^swww-daemon$"
     place-within-backdrop true
 }
-workspace "web"
-workspace "academic"
-workspace "chill"
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
@@ -267,17 +263,21 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 // The wiki explains how to configure individual animations:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
 animations {
-    // Uncomment to turn off all animations.
+ // Uncomment to turn off all animations.
     // off
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 2
+    // slowdown 2
  // workspace-switch {
     //    spring damping-ratio=1.99999 stiffness=1000 epsilon=0.0001
     // }
+
 }
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+workspace "web"
+workspace "academic-university"
+workspace "personal"
 window-rule {
     opacity 0.95
     draw-border-with-background false
@@ -288,23 +288,26 @@ window-rule {
     open-on-workspace "web"
 }
 window-rule {
-    match app-id="discord"
-    open-maximized false
-    open-on-workspace "chill"
-}
-window-rule {
-    match app-id="spotify"
-    open-maximized true
-    open-on-workspace "chill"
-    opacity 0.85
-}
-window-rule {
-    // Open the Firefox picture-in-picture player as floating by default.window-rule {
     match app-id="obsidian"
     open-maximized true
-    open-on-workspace "academic"
+    block-out-from "screen-capture"
+    open-on-workspace "academic-university"
 }
-// Open the Firefox picture-in-picture player as floating by default.
+// Screeen Cast Block Rules on Personal
+window-rule {
+    match app-id="discord"
+    match app-id="spotify"
+    match app-id="Bitwarden"
+    match app-id="Element"
+    match app-id="com.github.iwalton3.jellyfin-media-player"
+    match app-id="org.telegram.desktop"
+    match app-id="org.gnome.Loupe"
+    match app-id="org.gnome.Papers"
+    match app-id="com.stremio.stremio"
+    block-out-from "screen-capture"
+    open-maximized false
+    open-on-workspace "personal"
+}
 window-rule {
     // This app-id regular expression will work for both:
     // - host Firefox (app-id is "firefox")
@@ -315,6 +318,7 @@ window-rule {
 window-rule {
     match is-window-cast-target=true
     focus-ring {
+        width 4
         active-color "#f38ba8"
         inactive-color "#7d0d2d"
     }
@@ -328,15 +332,6 @@ window-rule {
         active-color "#f38ba8"
         inactive-color "#7d0d2d"
     }
-}
-// Example: block out two password managers from screen capture.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-match app-id=r#"^org\.keepassxc\.KeePassXC$"#
-match app-id=r#"^org\.gnome\.World\.Secrets$"#
-block-out-from "screen-capture"
-// Use this instead if you want them visible on third-party screenshot tools.
-// block-out-from "screencast"
 }
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
@@ -365,6 +360,12 @@ binds {
     }
     Super+B hotkey-overlay-title="Open Browser" {
         spawn "brave"
+    }
+    Super+Shift+P hotkey-overlay-title="Password Manager" {
+        spawn "bitwarden"
+    }
+    Super+Shift+T hotkey-overlay-title="Open Telegram" {
+        spawn "Telegram"
     }
     Super+Shift+N hotkey-overlay-title="Open Obsidian" {
         spawn "obsidian"
