@@ -2,7 +2,6 @@ app_launch_prefix = ""
 terminal_title_flag = ""
 locale = ""
 close_when_open = true         # Toggle on reopen
-theme = "default"
 monitor = ""
 hotreload_theme = true
 as_window = false
@@ -28,7 +27,7 @@ alternate = "alt"
 clear_session = ["ctrl x"]
 copy_last_response = ["ctrl c"]
 resume_session = ["ctrl r"]
-run_last_response = ["ctrl e"]
+run_last_responstruee = ["ctrl e"]
 
 [events]
 on_activate = ""
@@ -57,16 +56,18 @@ labels = "jkl;asdf"
 
 [builtins.hyprland_keybinds]
 show_sub_when_single = true
+path = "~/.config/niri/config.kdl"
 weight = 5
 name = "hyprland_keybinds"
 placeholder = "Hyprland Keybinds"
 switcher_only = true
+hidden = false
 
 [builtins.applications]
 weight = 5
 name = "applications"
 placeholder = "Search..."
-prioritize_new = false
+prioritize_new = true
 hide_actions_with_empty_query = true
 context_aware = false
 refresh = true
@@ -88,12 +89,18 @@ placeholder = "Bookmarks"
 name = "bookmarks"
 icon = "bookmark"
 switcher_only = true
-hidden = true
+hidden = false
 
 [[builtins.bookmarks.entries]]
-label = "Walker"
-url = "https://github.com/abenz1267/walker"
-keywords = ["walker", "github"]
+label = "NixOS Package Search"
+url = "https://search.nixos.org/package"
+keywords = ["nixos", "packages", "github"]
+
+[[builtins.bookmarks.entries]]
+label = "Niri Wiki - GitHub"
+url = "https://github.com/YaLTeR/niri/wik"
+keywords = ["niri", "github"]
+
 
 [builtins.xdph_picker]
 hidden = true
@@ -173,6 +180,7 @@ history = true
 typeahead = true
 show_unqualified = false
 prefix = ":"
+hidden = true
 
 [builtins.symbols]
 after_copy = ""
@@ -198,7 +206,7 @@ refresh = true
 concurrency = 8
 show_icon_when_single = true
 preview_images = true
-hidden = false
+hidden = true
 prefix = "."
 
 [builtins.runner]
@@ -238,27 +246,12 @@ weight = 5
 icon = "applications-internet"
 name = "websearch"
 placeholder = "Websearch"
-switcher_only = true
-hidden = true
+switcher_only = false
+hidden = false
 
 [[builtins.websearch.entries]]
 name = "Google"
 url = "https://www.google.com/search?q=%TERM%"
-
-[[builtins.websearch.entries]]
-name = "DuckDuckGo"
-url = "https://duckduckgo.com/?q=%TERM%"
-switcher_only = true
-
-[[builtins.websearch.entries]]
-name = "Ecosia"
-url = "https://www.ecosia.org/search?q=%TERM%"
-switcher_only = true
-
-[[builtins.websearch.entries]]
-name = "Yandex"
-url = "https://yandex.com/search/?text=%TERM%"
-switcher_only = true
 
 [builtins.dmenu]
 hidden = true
