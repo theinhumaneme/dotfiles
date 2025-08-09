@@ -123,7 +123,7 @@
   "cpu": {
     "format": "{usage}% ",
     "tooltip": false,
-    "on-click": "alacritty -e btop",
+    "on-click": "kitty -e btop",
   },
   "memory": {
     "format": "{}% ",
@@ -183,7 +183,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "alacritty -e nm-applet",
+    "on-click": "kitty -e nm-applet",
   },
   "bluetooth": {
     "format": "",
