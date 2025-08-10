@@ -354,8 +354,8 @@ binds {
         show-hotkey-overlay
     }
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Super+Return hotkey-overlay-title="Open a Terminal: kitty" {
-        spawn "kitty"
+    Super+Return hotkey-overlay-title="Open a Terminal: alacritty" {
+        spawn "alacritty"
     }
     Super+B hotkey-overlay-title="Open Browser" {
         spawn "brave"
@@ -392,7 +392,7 @@ binds {
     }
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
-    // Mod+T { spawn "bash" "-c" "notify-send hello && exec kitty"; }
+    // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume allow-when-locked=true {
