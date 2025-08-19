@@ -12,6 +12,7 @@
   "modules-right": [
     // "network",
     // "bluetooth",
+    "power-profiles-daemon",
     "cpu",
     "memory",
     "backlight",
