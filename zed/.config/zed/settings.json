@@ -3,10 +3,10 @@
   "vim_mode": false,
   "icon_theme": "Catppuccin Latte",
   "theme": "Catppuccin Mocha",
-  "ui_font_size": 20,
-  "ui_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_family": "JetBrainsMono Nerd Font",
-  "buffer_font_size": 20,
+  "ui_font_size": 18,
+  "ui_font_family": "CaskaydiaMono Nerd Font Propo",
+  "buffer_font_family": "CaskaydiaMono Nerd Font Propo",
+  "buffer_font_size": 18,
   "languages": {
     "Nix": {
       "formatter": {
@@ -18,7 +18,9 @@
   },
   "lsp": {
     "Nix": {
-      "language_servers": ["nixd", "!nil"]
+      "language_servers": [
+        "nixd"
+      ]
     },
     "$LANGUAGE_SERVER_NAME": {
       "initialization_options": {
@@ -38,7 +40,9 @@
   "format_on_save": "language_server",
   "autosave": "on_focus_change",
   "edit_predictions": {
-    "disabled_globs": [".env"]
+    "disabled_globs": [
+      ".env"
+    ]
   },
   "current_line_highlight": "line",
   "scrollbar": {
