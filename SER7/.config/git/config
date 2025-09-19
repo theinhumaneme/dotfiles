@@ -1,3 +1,5 @@
   [user]
 	email = "theinhumaneme@gmail.com"
 	name = "Kalyan Mudumby"
+  [pull]
+    rebase = true
