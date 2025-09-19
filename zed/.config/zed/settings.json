@@ -1,4 +1,7 @@
 {
+  "project_panel": {
+    "dock": "right"
+  },
   "auto_update": false,
   "vim_mode": false,
   "icon_theme": "Catppuccin Latte",
