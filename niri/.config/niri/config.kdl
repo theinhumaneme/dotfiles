@@ -268,11 +268,44 @@ animations {
  // Uncomment to turn off all animations.
     // off
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 2
- // workspace-switch {
-    //    spring damping-ratio=1.99999 stiffness=1000 epsilon=0.0001
-    // }
+    slowdown 2.0
 
+    // Individual animations.
+
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+
+    window-open {
+        duration-ms 200
+        curve "ease-out-expo"
+    }
+
+    window-close {
+        duration-ms 200
+        curve "ease-out-expo"
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    window-resize {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+
+    overview-open-close {
+        spring damping-ratio=2.0 stiffness=1000 epsilon=0.0001
+    }
 }
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
@@ -282,20 +315,27 @@ workspace "academic-university"
 workspace "personal"
 window-rule {
     draw-border-with-background false
+    opacity 0.95
 }
 window-rule {
     match app-id="brave-browser"
     open-maximized true
     open-on-workspace "web"
+    
+}
+window-rule {
+    opacity 1.0
+    match app-id="brave-browser"
+    match app-id="org.gnome.Papers"
 }
 window-rule {
     match app-id="obsidian"
     open-maximized true
-    block-out-from "screen-capture"
     open-on-workspace "academic-university"
 }
 // Screeen Cast Block Rules on Personal
 window-rule {
+    match app-id="obsidian"
     match app-id="discord"
     match app-id="spotify"
     match app-id="Bitwarden"
@@ -419,6 +459,9 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false {
+        toggle-overview
+    }
+    Alt+Tab repeat=false {
         toggle-overview
     }
     Mod+Q {
@@ -779,20 +822,19 @@ binds {
     Mod+W {
         toggle-column-tabbed-display
     }
-    // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
     // a matching layout switch hotkey configured in xkb options above.
     // Having both at once on the same hotkey will break the switching,
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
-    Print {
+    Alt+Shift+P {
         screenshot
     }
-    Ctrl+Print {
+    Alt+Shift+S {
         screenshot-screen
     }
-    Alt+Print {
+    Alt+Shift+W {
         screenshot-window
     }
     // Applications such as remote-desktop clients and software KVM switches may
@@ -815,7 +857,7 @@ binds {
     }
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
-    Mod+Shift+P {
+    Mod+Shift+O  {
         power-off-monitors
     }
 }
