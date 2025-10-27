@@ -7,4 +7,4 @@ WALLPAPER_DIR="/home//kalyanm/dotfiles/wallpapers/"
 RANDOM_WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 
 # Set the selected wallpaper using swww
-swww img "$RANDOM_WALLPAPER" --transition-type any --transition-fps 60 
+swww img "$RANDOM_WALLPAPER" --transition-type outer --transition-fps 60
