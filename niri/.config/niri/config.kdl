@@ -327,6 +327,7 @@ window-rule {
     opacity 1.0
     match app-id="brave-browser"
     match app-id="org.gnome.Papers"
+    match app-id="zoom"
 }
 window-rule {
     match app-id="obsidian"
